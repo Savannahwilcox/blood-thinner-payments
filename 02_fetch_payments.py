@@ -1,3 +1,4 @@
+# 02_fetch_payments.py
 # downloads 2024 open payments general payments to texas providers
 # where eliquis or xarelto is listed in any of the 5 product slots
 
@@ -11,6 +12,7 @@ URL = "https://openpaymentsdata.cms.gov/api/1/datastore/query/e6b17c6a-2534-4207
 PAGE_SIZE = 500  # CMS api will not send more than 500 rows at once
 DRUGS = ["Eliquis", "Xarelto"]
 SLOTS = [1, 2, 3, 4, 5]  # each payment can list up to 5 products
+
 
 def fetch_payments(drug_name, slot):
     column = "name_of_drug_or_biological_or_device_or_medical_supply_" + str(slot)
@@ -47,6 +49,7 @@ def fetch_payments(drug_name, slot):
         time.sleep(1)
 
     return all_rows
+
 
 out_dir = Path("data/raw")
 out_dir.mkdir(parents=True, exist_ok=True)
