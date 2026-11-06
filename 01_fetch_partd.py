@@ -1,4 +1,4 @@
-# downloads medicare part D prescribing for TX physicians
+# downloads medicare part D prescribing for TX providers
 # only ELIQUIS and XARELTO
 
 import csv
@@ -7,7 +7,7 @@ from pathlib import Path
 
 import requests 
 
-# the 2024 version of part d presvsribers by providor and drug dataset 
+# the 2024 version of part d presvsribers by provider and drug dataset 
 URL = "https://data.cms.gov/data-api/v1/dataset/d5aa71a8-dcc0-4570-8bcf-bd39deac69fe/data"
 PAGE_SIZE = 5000
 DRUGS = ["Eliquis", "Xarelto"]
